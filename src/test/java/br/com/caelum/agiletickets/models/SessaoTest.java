@@ -6,7 +6,7 @@ import org.junit.Test;
 public class SessaoTest {
 
 	@Test
-	public void deveVender1ingressoSeHa2vagas() throws Exception {
+	public void temVagaDisponivel() throws Exception {
 		Sessao sessao = new Sessao();
         sessao.setTotalIngressos(2);
 
@@ -14,7 +14,7 @@ public class SessaoTest {
 	}
 	
 	@Test
-	public void deveVender2IngressosSeHa2Vagas() {
+	public void consegueReservarTudo() {
 		Sessao sessao = new Sessao();
 		sessao.setTotalIngressos(2);
 		
@@ -24,7 +24,7 @@ public class SessaoTest {
 	}
 
 	@Test
-	public void naoDeveVender3ingressoSeHa2vagas() throws Exception {
+	public void naoUltrapassaLimiteDeVagas() throws Exception {
 		Sessao sessao = new Sessao();
 		sessao.setTotalIngressos(2);
 
