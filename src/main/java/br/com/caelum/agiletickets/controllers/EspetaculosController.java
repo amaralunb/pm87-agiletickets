@@ -39,7 +39,6 @@ public class EspetaculosController {
 	private Agenda agenda;
 	private DiretorioDeEstabelecimentos estabelecimentos;
 	
-	/** @deprecated CDI eyes only*/
 	protected EspetaculosController() {
 	}
 
