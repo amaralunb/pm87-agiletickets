@@ -11,9 +11,6 @@ import static br.com.caelum.agiletickets.models.TipoDeEspetaculo.SHOW;
 
 public class CalculadoraDePrecos {
 
-	private static final double TAXA_ESPETACULO_NORMAL = 0.10;
-	private static final double TAXA_ESPETACULO_PREMIUM = 0.20;
-
 	public static BigDecimal calcula(Sessao sessao, Integer quantidade) {
 		TipoDeEspetaculo categoriaDoEspetaculo = sessao.getEspetaculo().getTipo();
 		
@@ -25,10 +22,10 @@ public class CalculadoraDePrecos {
 		
 		if(categoriaDoEspetaculo.equals(CINEMA) || categoriaDoEspetaculo.equals(SHOW)) {
 			AcrescimoParaEspetaculoNormal acrescimoParaEspetaculoNormal = new AcrescimoParaEspetaculoNormal();
-			preco = acrescimoParaEspetaculoNormal.acrescimoParaEspetaculoNormal(sessao, totalDeIngressos, ingressosRestantes, TAXA_ESPETACULO_NORMAL);
+			preco = acrescimoParaEspetaculoNormal.acrescimoParaEspetaculoNormal(sessao, totalDeIngressos, ingressosRestantes, AcrescimoParaEspetaculoNormal.TAXA_ESPETACULO_NORMAL);
 		} else if(categoriaDoEspetaculo.equals(BALLET) || categoriaDoEspetaculo.equals(ORQUESTRA)) {
 			AcrescimoParaEspetaculoPremium acrescimoParaEspetaculoPremium = new AcrescimoParaEspetaculoPremium();
-			preco = acrescimoParaEspetaculoPremium.acrescimoParaEspetaculoPremium(sessao, totalDeIngressos, ingressosRestantes, TAXA_ESPETACULO_PREMIUM);
+			preco = acrescimoParaEspetaculoPremium.acrescimoParaEspetaculoPremium(sessao, totalDeIngressos, ingressosRestantes, AcrescimoParaEspetaculoPremium.TAXA_ESPETACULO_PREMIUM);
 		} else {
 			//nao aplica aumento para teatro (quem vai é pobretão)
 			preco = sessao.getPreco();
