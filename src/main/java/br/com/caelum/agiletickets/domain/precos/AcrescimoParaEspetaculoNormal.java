@@ -8,6 +8,7 @@ public class AcrescimoParaEspetaculoNormal extends AcrescimoParaEspetaculo {
 
 	static final double TAXA_ESPETACULO_NORMAL = 0.10;
 
+	@Override
 	public BigDecimal calculaAcrescimo(Sessao sessao) {
 		BigDecimal preco;
 		//quando estiver acabando os ingressos...

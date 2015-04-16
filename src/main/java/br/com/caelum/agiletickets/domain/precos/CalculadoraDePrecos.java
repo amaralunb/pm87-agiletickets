@@ -18,7 +18,7 @@ public class CalculadoraDePrecos {
 		
 		
 		if(categoriaDoEspetaculo.equals(CINEMA) || categoriaDoEspetaculo.equals(SHOW)) {
-			AcrescimoParaEspetaculoNormal acrescimoParaEspetaculoNormal = new AcrescimoParaEspetaculoNormal();
+			AcrescimoParaEspetaculo acrescimoParaEspetaculoNormal = new AcrescimoParaEspetaculoNormal();
 			preco = acrescimoParaEspetaculoNormal.calculaAcrescimo(sessao);
 		} else if(categoriaDoEspetaculo.equals(BALLET) || categoriaDoEspetaculo.equals(ORQUESTRA)) {
 			AcrescimoParaEspetaculoPremium acrescimoParaEspetaculoPremium = new AcrescimoParaEspetaculoPremium();
