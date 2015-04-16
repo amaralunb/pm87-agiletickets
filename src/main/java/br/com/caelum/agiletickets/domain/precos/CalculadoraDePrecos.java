@@ -15,16 +15,17 @@ public class CalculadoraDePrecos {
 		BigDecimal preco;
 		TipoDeEspetaculo categoriaDoEspetaculo = sessao.getEspetaculo().getTipo();
 		int ingressosRestantes = sessao.getTotalIngressos() - sessao.getIngressosReservados();
+		double totalDeIngressos = sessao.getTotalIngressos().doubleValue();
 		
 		if(categoriaDoEspetaculo.equals(CINEMA) || categoriaDoEspetaculo.equals(SHOW)) {
 			//quando estiver acabando os ingressos... 
-			if(ingressosRestantes / sessao.getTotalIngressos().doubleValue() <= 0.05) { 
+			if(ingressosRestantes / totalDeIngressos <= 0.05) { 
 				preco = sessao.getPreco().add(sessao.getPreco().multiply(BigDecimal.valueOf(0.10)));
 			} else {
 				preco = sessao.getPreco();
 			}
 		} else if(categoriaDoEspetaculo.equals(BALLET)) {
-			if(ingressosRestantes / sessao.getTotalIngressos().doubleValue() <= 0.50) { 
+			if(ingressosRestantes / totalDeIngressos <= 0.50) { 
 				preco = sessao.getPreco().add(sessao.getPreco().multiply(BigDecimal.valueOf(0.20)));
 			} else {
 				preco = sessao.getPreco();
@@ -34,7 +35,7 @@ public class CalculadoraDePrecos {
 				preco = preco.add(sessao.getPreco().multiply(BigDecimal.valueOf(0.10)));
 			}
 		} else if(categoriaDoEspetaculo.equals(ORQUESTRA)) {
-			if(ingressosRestantes / sessao.getTotalIngressos().doubleValue() <= 0.50) { 
+			if(ingressosRestantes / totalDeIngressos <= 0.50) { 
 				preco = sessao.getPreco().add(sessao.getPreco().multiply(BigDecimal.valueOf(0.20)));
 			} else {
 				preco = sessao.getPreco();
