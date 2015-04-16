@@ -9,13 +9,8 @@ public class CalculadoraDePrecos {
 
 	public static BigDecimal calcula(Sessao sessao, Integer quantidade) {
 		TipoDeEspetaculo categoriaDoEspetaculo = sessao.getEspetaculo().getTipo();
-		
-		BigDecimal preco;
-		
 		AcrescimoParaEspetaculo acrescimo = categoriaDoEspetaculo.getAcrescimo();
-
-		preco = acrescimo.calculaAcrescimo(sessao);
-		
+		BigDecimal preco = acrescimo.calculaAcrescimo(sessao);
 		return preco.multiply(BigDecimal.valueOf(quantidade));
 	}
 
