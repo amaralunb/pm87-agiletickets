@@ -6,4 +6,8 @@ public class AcrescimoParaEspetaculo {
 		super();
 	}
 
+	protected double porcentagemDeIngressosFaltantes(double totalDeIngressos, double ingressosRestantes) {
+		return ingressosRestantes / totalDeIngressos;
+	}
+
 }

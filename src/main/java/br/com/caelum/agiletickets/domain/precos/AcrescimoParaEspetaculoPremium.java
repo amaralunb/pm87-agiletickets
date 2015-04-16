@@ -23,8 +23,4 @@ public class AcrescimoParaEspetaculoPremium extends AcrescimoParaEspetaculo {
 		return preco;
 	}
 
-	private double porcentagemDeIngressosFaltantes(double totalDeIngressos,	double ingressosRestantes) {
-		return ingressosRestantes / totalDeIngressos;
-	}
-
 }
