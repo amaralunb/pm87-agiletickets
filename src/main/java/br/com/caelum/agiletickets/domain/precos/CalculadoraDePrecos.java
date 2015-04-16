@@ -14,9 +14,8 @@ public class CalculadoraDePrecos {
 	public static BigDecimal calcula(Sessao sessao, Integer quantidade) {
 		TipoDeEspetaculo categoriaDoEspetaculo = sessao.getEspetaculo().getTipo();
 		
-		Integer totalIngressos = sessao.getTotalIngressos();
-		int ingressosRestantes = totalIngressos - sessao.getIngressosReservados();
-		double totalDeIngressos = totalIngressos.doubleValue();
+		double totalDeIngressos = sessao.getTotalIngressos().doubleValue();
+		double ingressosRestantes = totalDeIngressos - sessao.getIngressosReservados();
 
 		BigDecimal preco;
 		
