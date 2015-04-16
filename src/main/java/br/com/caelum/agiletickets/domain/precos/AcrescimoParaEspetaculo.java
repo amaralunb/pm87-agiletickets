@@ -5,7 +5,8 @@ import br.com.caelum.agiletickets.models.Sessao;
 public class AcrescimoParaEspetaculo {
 
 	protected double porcentagemDeIngressosFaltantes(Sessao sessao) {
-		return ingressosRestantes / totalDeIngressos;
+		double ingressosRestantes = sessao.getTotalIngressos() - sessao.getIngressosReservados();
+		return ingressosRestantes / sessao.getTotalIngressos();
 	}
 
 }
