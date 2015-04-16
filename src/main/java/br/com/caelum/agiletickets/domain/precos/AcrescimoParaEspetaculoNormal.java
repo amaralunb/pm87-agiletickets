@@ -15,7 +15,7 @@ public class AcrescimoParaEspetaculoNormal {
 		//quando estiver acabando os ingressos...
 		
 		if(ingressosRestantes / totalDeIngressos <= 0.05) {
-			preco = CalculadoraDePrecos.atualizaPreco(sessao, taxaCinemaShow);
+			preco = CalculadoraDePrecos.atualizaPreco(sessao, TAXA_ESPETACULO_NORMAL);
 		} else {
 			preco = sessao.getPreco();
 		}
