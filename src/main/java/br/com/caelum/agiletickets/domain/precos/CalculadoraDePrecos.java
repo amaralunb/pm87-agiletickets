@@ -18,7 +18,7 @@ public class CalculadoraDePrecos {
 		
 		if(categoriaDoEspetaculo.equals(CINEMA) || categoriaDoEspetaculo.equals(SHOW)) {
 			//quando estiver acabando os ingressos... 
-			if(ingressosRestantes / sessao.getTotalIngressos().doubleValue() <= 15) { 
+			if(ingressosRestantes / sessao.getTotalIngressos().doubleValue() <= 0.05) { 
 				preco = sessao.getPreco().add(sessao.getPreco().multiply(BigDecimal.valueOf(0.10)));
 			} else {
 				preco = sessao.getPreco();
