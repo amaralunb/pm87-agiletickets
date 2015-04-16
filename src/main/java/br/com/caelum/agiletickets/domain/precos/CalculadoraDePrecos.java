@@ -31,8 +31,4 @@ public class CalculadoraDePrecos {
 		return preco.multiply(BigDecimal.valueOf(quantidade));
 	}
 
-	static BigDecimal atualizaPreco(Sessao sessao, double taxa) {
-		return sessao.getPreco().add(sessao.getPreco().multiply(BigDecimal.valueOf(taxa)));
-	}
-
 }

@@ -13,7 +13,7 @@ public class AcrescimoParaEspetaculoNormal extends AcrescimoParaEspetaculo {
 		//quando estiver acabando os ingressos...
 		
 		if(sessao.porcentagemDeIngressosFaltantes() <= 0.05) {
-			preco = CalculadoraDePrecos.atualizaPreco(sessao, TAXA_ESPETACULO_NORMAL);
+			preco = AcrescimoParaEspetaculo.atualizaPreco(sessao, TAXA_ESPETACULO_NORMAL);
 		} else {
 			preco = sessao.getPreco();
 		}
