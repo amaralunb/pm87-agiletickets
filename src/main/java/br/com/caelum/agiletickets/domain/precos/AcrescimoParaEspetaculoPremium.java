@@ -9,8 +9,7 @@ public class AcrescimoParaEspetaculoPremium {
 	static final double TAXA_ESPETACULO_PREMIUM = 0.20;
 
 	public BigDecimal acrescimoParaEspetaculoPremium(Sessao sessao,
-			double totalDeIngressos, double ingressosRestantes,
-			double taxaBalletOrquestra) {
+			double totalDeIngressos, double ingressosRestantes) {
 		BigDecimal preco;
 		if(ingressosRestantes / totalDeIngressos <= 0.50) { 
 			preco = CalculadoraDePrecos.atualizaPreco(sessao, TAXA_ESPETACULO_PREMIUM);
