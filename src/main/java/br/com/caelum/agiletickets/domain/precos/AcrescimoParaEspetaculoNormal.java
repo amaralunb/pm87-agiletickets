@@ -6,7 +6,7 @@ import br.com.caelum.agiletickets.models.Sessao;
 
 public class AcrescimoParaEspetaculoNormal {
 
-	static BigDecimal acrescimoParaEspetaculoNormal(Sessao sessao,
+	public BigDecimal acrescimoParaEspetaculoNormal(Sessao sessao,
 			double totalDeIngressos, double ingressosRestantes,
 			double taxaCinemaShow) {
 		BigDecimal preco;

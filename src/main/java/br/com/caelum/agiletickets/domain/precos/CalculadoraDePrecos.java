@@ -23,10 +23,11 @@ public class CalculadoraDePrecos {
 		double taxaBalletOrquestra = 0.20;
 		
 		if(categoriaDoEspetaculo.equals(CINEMA) || categoriaDoEspetaculo.equals(SHOW)) {
-			preco = AcrescimoParaEspetaculoNormal.acrescimoParaEspetaculoNormal(sessao, totalDeIngressos, ingressosRestantes, taxaCinemaShow);
+			AcrescimoParaEspetaculoNormal acrescimoParaEspetaculoNormal = new AcrescimoParaEspetaculoNormal();
+			preco = acrescimoParaEspetaculoNormal.acrescimoParaEspetaculoNormal(sessao, totalDeIngressos, ingressosRestantes, taxaCinemaShow);
 		} else if(categoriaDoEspetaculo.equals(BALLET) || categoriaDoEspetaculo.equals(ORQUESTRA)) {
-			
-			preco = AcrescimoParaEspetaculoPremium.acrescimoParaEspetaculoPremium(sessao, totalDeIngressos, ingressosRestantes, taxaBalletOrquestra);
+			AcrescimoParaEspetaculoPremium acrescimoParaEspetaculoPremium = new AcrescimoParaEspetaculoPremium();
+			preco = acrescimoParaEspetaculoPremium.acrescimoParaEspetaculoPremium(sessao, totalDeIngressos, ingressosRestantes, taxaBalletOrquestra);
 		} else {
 			//nao aplica aumento para teatro (quem vai é pobretão)
 			preco = sessao.getPreco();
