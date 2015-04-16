@@ -4,14 +4,12 @@ import java.math.BigDecimal;
 
 import br.com.caelum.agiletickets.models.Sessao;
 import br.com.caelum.agiletickets.models.TipoDeEspetaculo;
+import static br.com.caelum.agiletickets.models.TipoDeEspetaculo.BALLET;
+import static br.com.caelum.agiletickets.models.TipoDeEspetaculo.CINEMA;
+import static br.com.caelum.agiletickets.models.TipoDeEspetaculo.ORQUESTRA;
+import static br.com.caelum.agiletickets.models.TipoDeEspetaculo.SHOW;
 
 public class CalculadoraDePrecos {
-
-	private static final TipoDeEspetaculo ORQUESTRA = TipoDeEspetaculo.ORQUESTRA;
-	private static final TipoDeEspetaculo BALLET = TipoDeEspetaculo.BALLET;
-	private static final TipoDeEspetaculo SHOW = TipoDeEspetaculo.SHOW;
-	private static final TipoDeEspetaculo CINEMA = TipoDeEspetaculo.CINEMA;
-	private static final TipoDeEspetaculo TEATRO = TipoDeEspetaculo.TEATRO;
 
 	public static BigDecimal calcula(Sessao sessao, Integer quantidade) {
 		BigDecimal preco;
