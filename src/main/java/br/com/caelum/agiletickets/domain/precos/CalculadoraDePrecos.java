@@ -16,19 +16,16 @@ public class CalculadoraDePrecos {
 		
 		BigDecimal preco;
 		
-		AcrescimoParaEspetaculo acrescimo = null;
+		AcrescimoParaEspetaculo acrescimo;
 		if(categoriaDoEspetaculo.equals(CINEMA) || categoriaDoEspetaculo.equals(SHOW)) {
 			acrescimo = new AcrescimoParaEspetaculoNormal();
 		} else if(categoriaDoEspetaculo.equals(BALLET) || categoriaDoEspetaculo.equals(ORQUESTRA)) {
 			acrescimo = new AcrescimoParaEspetaculoPremium();
-		} 
-
-		if(acrescimo != null){
-			preco = acrescimo.calculaAcrescimo(sessao);
 		} else {
-			//nao aplica aumento para teatro (quem vai é pobretão)
-			preco = sessao.getPreco();
-		} 
+			acrescimo = new SemAcrescimo();
+		}
+
+		preco = acrescimo.calculaAcrescimo(sessao);
 		
 		return preco.multiply(BigDecimal.valueOf(quantidade));
 	}
