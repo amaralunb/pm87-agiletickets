@@ -4,7 +4,7 @@ import java.math.BigDecimal;
 
 import br.com.caelum.agiletickets.models.Sessao;
 
-public class AcrescimoParaEspetaculoNormal {
+public class AcrescimoParaEspetaculoNormal extends AcrescimoParaEspetaculo {
 
 	static final double TAXA_ESPETACULO_NORMAL = 0.10;
 
