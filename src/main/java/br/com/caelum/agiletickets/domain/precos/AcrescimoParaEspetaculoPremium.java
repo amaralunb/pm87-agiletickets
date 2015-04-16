@@ -10,7 +10,7 @@ public class AcrescimoParaEspetaculoPremium extends AcrescimoParaEspetaculo {
 
 	public BigDecimal acrescimoParaEspetaculoPremium(Sessao sessao) {
 		BigDecimal preco;
-		if(porcentagemDeIngressosFaltantes(sessao) <= 0.50) { 
+		if(sessao.porcentagemDeIngressosFaltantes() <= 0.50) { 
 			preco = CalculadoraDePrecos.atualizaPreco(sessao, TAXA_ESPETACULO_PREMIUM);
 		} else {
 			preco = sessao.getPreco();

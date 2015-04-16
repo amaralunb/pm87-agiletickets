@@ -113,4 +113,9 @@ public class Sessao {
 		return preco;
 	}
 
+	public double porcentagemDeIngressosFaltantes() {
+		double ingressosRestantes = getTotalIngressos() - getIngressosReservados();
+		return ingressosRestantes / getTotalIngressos();
+	}
+
 }
