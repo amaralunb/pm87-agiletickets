@@ -5,6 +5,7 @@ import java.math.BigDecimal;
 import org.junit.Before;
 import org.junit.Test;
 import org.mockito.Mock;
+import org.mockito.Mockito;
 import org.mockito.MockitoAnnotations;
 import org.mockito.Spy;
 
@@ -19,9 +20,7 @@ import br.com.caelum.vraptor.util.test.MockValidator;
 import br.com.caelum.vraptor.validator.ValidationException;
 import br.com.caelum.vraptor.validator.Validator;
 import static org.hamcrest.Matchers.is;
-
 import static org.junit.Assert.assertThat;
-
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.verifyZeroInteractions;
 import static org.mockito.Mockito.when;
@@ -117,6 +116,14 @@ public class EspetaculosControllerTest {
 		controller.reserva(1234l, 3);
 
 		assertThat(sessao.getIngressosDisponiveis(), is(2));
+	}
+	
+	@Test(expected=ValidationException.class)
+	public void deveDarErroSeNaoInformarQuantidade() throws Exception {
+		
+		Mockito.when(agenda.sessao(1234L)).thenReturn(new Sessao());
+		
+		controller.reserva(1234L, null);
 	}
 
 }

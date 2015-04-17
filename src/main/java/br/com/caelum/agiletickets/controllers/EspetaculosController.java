@@ -111,7 +111,11 @@ public class EspetaculosController {
 			result.notFound();
 			return;
 		}
-
+		
+		if (quantidade == null) {
+			validator.add(new SimpleMessage("", "Você deve reservar alguma quantidade de ingressos!"));
+			validator.onErrorRedirectTo(this).sessao(sessao.getId());
+		}
 		if (quantidade < 1) {
 			validator.add(new SimpleMessage("", "Você deve escolher um lugar ou mais"));
 		}
